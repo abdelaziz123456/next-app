@@ -6,7 +6,6 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../app/generated/prisma"
 }
 
 datasource db {
@@ -21,4 +20,10 @@ model User {
   followers    Int      @default(0)
   isActive     Boolean  @default(true)
   regesteredAt DateTime @default(now())
+}
+
+model Product {
+  id    Int    @id @default(autoincrement())
+  name  String
+  price Float
 }
